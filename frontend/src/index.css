@@ -6,8 +6,4 @@
   li {
     @apply p-4;
   }
-  button {
-    @apply text-white border bg-sky-700 border-indigo-500
-  hover:bg-transparent hover:text-indigo-700 rounded-md;
-  }
 }

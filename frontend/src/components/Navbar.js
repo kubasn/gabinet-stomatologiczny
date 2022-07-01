@@ -19,26 +19,40 @@ const Navbar = () => {
             <li>Kontakt</li>
           </ul>
         </div>
-        <div className="hidden md:flex pr-4">
-          <button className="">Umów wizytę</button>
+        <div className="hidden md:flex pr-4 items-center">
+          <button className="bg-zinc-50 text-stone-800 font-semibold  h-12 p-2 rounded-md">
+            Umów wizytę
+          </button>
         </div>
-        <div onClick={onClick} className="md:hidden">
-          {show ? <XIcon className="w-5" /> : <MenuIcon className="w-10" />}
+        <div onClick={onClick} className="md:hidden flex items-center">
+          {show ? (
+            <XIcon className="w-10" />
+          ) : (
+            <MenuIcon className="w-10 flex items:center" />
+          )}
         </div>
       </div>
       <ul
         className={
-          show ? "absolute w-full px-8 bg-zinc-200 text-black" : "hidden"
+          show
+            ? "absolute w-full px-8 bg-zinc-200 text-black flex flex-col"
+            : "hidden"
         }
       >
-        <li className="border-b-2 text-3xl border-zinc-300 w-full">Start</li>
-        <li className="border-b-2 text-3xl border-zinc-300 w-full">Usługi</li>
-        <li className="border-b-2 text-3xl border-zinc-300 w-full">
-          Lokalizacja
-        </li>
-        <li className="border-b-2 text-3xl border-zinc-300 w-full">Kontakt</li>
+        <div className="flex flex-col items-center text-center">
+          <li className="border-b-2 text-3xl border-zinc-300 w-full">Start</li>
+          <li className="border-b-2 text-3xl border-zinc-300 w-full">Usługi</li>
+          <li className="border-b-2 text-3xl border-zinc-300 w-full">
+            Lokalizacja
+          </li>
+          <li className="border-b-2 text-3xl border-zinc-300 w-full">
+            Kontakt
+          </li>
+        </div>
         <div className="flex flex-col my-4">
-          <button className="bg-tr py-3 px-3 mb-3">Umów wizytę</button>
+          <button className="border-rose-700 bg-cyan-900 text-zinc-50 py-1 rounded-sm">
+            Umów wizytę
+          </button>
         </div>
       </ul>
     </div>
