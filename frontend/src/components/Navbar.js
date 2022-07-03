@@ -13,10 +13,10 @@ const Navbar = () => {
         <div className="flex items-center">
           <h1 className="text-3xl mr-5 sm:text-4xl ">DENTIST+</h1>
           <ul className="hidden md:flex text-2xl">
-            <li>Start</li>
-            <li>Usługi</li>
-            <li>Lokalizacja</li>
-            <li>Kontakt</li>
+            <li className="cursor-pointer">Start</li>
+            <li className="cursor-pointer">Usługi</li>
+            <li className="cursor-pointer">Lokalizacja</li>
+            <li className="cursor-pointer">Kontakt</li>
           </ul>
         </div>
         <div className="hidden md:flex pr-4 items-center">
@@ -26,9 +26,9 @@ const Navbar = () => {
         </div>
         <div onClick={onClick} className="md:hidden flex items-center">
           {show ? (
-            <XIcon className="w-10" />
+            <XIcon className="w-10 mx-2" />
           ) : (
-            <MenuIcon className="w-10 flex items:center" />
+            <MenuIcon className="w-10 mx-2 flex items:center" />
           )}
         </div>
       </div>
@@ -40,12 +40,16 @@ const Navbar = () => {
         }
       >
         <div className="flex flex-col items-center text-center">
-          <li className="border-b-2 text-3xl border-zinc-300 w-full">Start</li>
-          <li className="border-b-2 text-3xl border-zinc-300 w-full">Usługi</li>
-          <li className="border-b-2 text-3xl border-zinc-300 w-full">
+          <li className="border-b-2 cursor-pointer text-3xl border-zinc-300 w-full">
+            Start
+          </li>
+          <li className="border-b-2 cursor-pointer text-3xl border-zinc-300 w-full">
+            Usługi
+          </li>
+          <li className="border-b-2 cursor-pointer text-3xl border-zinc-300 w-full">
             Lokalizacja
           </li>
-          <li className="border-b-2 text-3xl border-zinc-300 w-full">
+          <li className="border-b-2 cursor-pointer text-3xl border-zinc-300 w-full">
             Kontakt
           </li>
         </div>
