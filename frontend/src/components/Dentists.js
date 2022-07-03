@@ -19,16 +19,16 @@ const Dentists = () => {
         </div>
         <div className="border border-slate-300 rounded-xl text-center md:min-w-[760px] sm:min-w-[480px] min-w-full bg-zinc-100 py-3 px-2 ">
           <div className="flex justify-between flex-wrap ">
-            <p className="flex px-4 bg-cyan-700 rounded-lg text-white">
+            <p className="flex px-4  rounded-lg text-slate-800 font-semibold uppercase">
               Ortodoncja
             </p>
-            <p className="flex px-4 bg-cyan-700 text-white rounded-lg">
+            <p className="flex px-4  text-slate-800 font-semibold rounded-lg uppercase">
               Stomatologia
             </p>
-            <p className="flex px-4 bg-cyan-700 text-white rounded-lg">
+            <p className="flex px-4  text-slate-800 font-semibold rounded-lg uppercase">
               Profilaktyka
             </p>
-            <p className="flex px-4 bg-cyan-700 text-white rounded-lg">
+            <p className="flex px-4  text-slate-800 font-semibold rounded-lg uppercase">
               Protetyka
             </p>
           </div>
