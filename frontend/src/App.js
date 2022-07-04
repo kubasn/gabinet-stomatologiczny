@@ -1,6 +1,8 @@
 import "./App.css";
 import About from "./components/About";
+import Contact from "./components/Contact";
 import Dentists from "./components/Dentists";
+import Location from "./components/Location";
 import Navbar from "./components/Navbar";
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
       <Navbar />
       <Dentists />
       <About />
+      <Contact />
+      <Location />
     </>
   );
 }

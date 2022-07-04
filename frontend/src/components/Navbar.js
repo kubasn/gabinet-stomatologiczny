@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import { MenuIcon, XIcon, xIcon } from "@heroicons/react/outline";
-
+import { Link, animateScroll as scroll } from "react-scroll";
+import styled from "styled-components";
 const Navbar = () => {
   const [show, setShow] = useState(false);
   const onClick = () => {
     setShow(!show);
   };
+
+  let scrollTop = () => scroll.scrollTo(0, 0);
 
   return (
     <div className="w-screen h-[80px] z-10 bg-cyan-900 fixed drop-shadow-lg text-white">
@@ -13,10 +16,54 @@ const Navbar = () => {
         <div className="flex items-center">
           <h1 className="text-3xl mr-5 sm:text-4xl ">DENTIST+</h1>
           <ul className="hidden md:flex text-2xl">
-            <li className="cursor-pointer">Start</li>
-            <li className="cursor-pointer">Usługi</li>
-            <li className="cursor-pointer">Lokalizacja</li>
-            <li className="cursor-pointer">Kontakt</li>
+            <Item onClick={scrollTop} className="cursor-pointer">
+              {" "}
+              {/* <Link
+                to="myScrollToElement"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              > */}
+              Start
+              {/* </Link> */}
+            </Item>
+            <Item className="cursor-pointer">
+              {" "}
+              <Link
+                to="services"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                Usługi
+              </Link>
+            </Item>
+            <Item className="cursor-pointer">
+              {" "}
+              <Link
+                to="location"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                Lokalizacja
+              </Link>
+            </Item>
+            <Item className="cursor-pointer">
+              {" "}
+              <Link
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+              >
+                Kontakt
+              </Link>
+            </Item>
           </ul>
         </div>
         <div className="hidden md:flex pr-4 items-center">
@@ -41,16 +88,48 @@ const Navbar = () => {
       >
         <div className="flex flex-col items-center text-center">
           <li className="border-b-2 cursor-pointer text-3xl border-zinc-300 w-full">
-            Start
+            <Link
+              to="test1"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Start
+            </Link>
           </li>
           <li className="border-b-2 cursor-pointer text-3xl border-zinc-300 w-full">
-            Usługi
+            <Link
+              to="test1"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Usługi
+            </Link>
           </li>
           <li className="border-b-2 cursor-pointer text-3xl border-zinc-300 w-full">
-            Lokalizacja
+            <Link
+              to="test1"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Lokalizacja
+            </Link>
           </li>
           <li className="border-b-2 cursor-pointer text-3xl border-zinc-300 w-full">
-            Kontakt
+            <Link
+              to="test1"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Kontakt
+            </Link>
           </li>
         </div>
         <div className="flex flex-col my-4">
@@ -62,5 +141,26 @@ const Navbar = () => {
     </div>
   );
 };
+
+const Item = styled.li`
+  position: relative;
+  &:after {
+    position: absolute;
+    content: "";
+    height: 2px;
+    background-color: white;
+    width: 0%;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    transition: all 1s ease-in-out;
+  }
+  &:hover:after {
+    width: 100%;
+  }
+
+  &:hover {
+  }
+`;
 
 export default Navbar;

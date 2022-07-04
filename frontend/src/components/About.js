@@ -15,6 +15,7 @@ const About = () => {
           </Paragraph>
         </div>
         <img
+          draggable="false"
           className="md:h-50 sm:h-30"
           src={require("../assets/dentist.png")}
         ></img>

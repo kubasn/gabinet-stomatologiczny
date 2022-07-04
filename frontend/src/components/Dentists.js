@@ -1,8 +1,15 @@
 import React from "react";
+import styled from "styled-components";
+import { BsArrowDownCircleFill } from "react-icons/bs";
+import InfoDetails from "./InfoDetails";
+import { useState } from "react";
 
 const Dentists = () => {
   return (
-    <div className="relative w-full h-screen  flex flex-col justify-between ">
+    <div
+      name="services"
+      className="relative w-full h-screen  flex flex-col justify-between "
+    >
       <div className="flex flex-col items-center max-v-[1200px] m-auto">
         <div className=" flex flex-col justify-center md:items:start w-full px-2 py-8 my-10">
           <p className="mx-auto text-2xl">Leczenie bez stresu</p>
@@ -18,19 +25,31 @@ const Dentists = () => {
           ></img>
         </div>
         <div className="border border-slate-300 rounded-xl text-center md:min-w-[760px] sm:min-w-[480px] min-w-full bg-zinc-100 py-3 px-2 ">
-          <div className="flex justify-between flex-wrap ">
-            <p className="flex px-4  rounded-lg text-slate-800 font-semibold uppercase">
-              Ortodoncja
-            </p>
-            <p className="flex px-4  text-slate-800 font-semibold rounded-lg uppercase">
-              Stomatologia
-            </p>
-            <p className="flex px-4  text-slate-800 font-semibold rounded-lg uppercase">
-              Profilaktyka
-            </p>
-            <p className="flex px-4  text-slate-800 font-semibold rounded-lg uppercase">
-              Protetyka
-            </p>
+          <div className="flex justify-between flex-col sm:flex-row ">
+            <div className="flex flex-col justify-center items-center relative">
+              <p className="flex px-4 pb-2  rounded-lg text-slate-800 font-semibold uppercase">
+                Ortodoncja
+              </p>
+              <InfoDetails info="ortodoncja" />
+            </div>
+            <div className="flex flex-col justify-center items-center relative">
+              <p className="flex px-4 pb-2  text-slate-800 font-semibold rounded-lg uppercase">
+                Stomatologia
+              </p>
+              <InfoDetails info="stomatologia" />
+            </div>
+            <div className="flex flex-col justify-center items-center relative">
+              <p className="flex px-4 pb-2  text-slate-800 font-semibold rounded-lg uppercase">
+                Profilaktyka
+              </p>
+              <InfoDetails info="profilaktyka" />
+            </div>
+            <div className="flex flex-col justify-center items-center relative">
+              <p className="flex px-4 pb-2  text-slate-800 font-semibold rounded-lg uppercase">
+                Protetyka
+              </p>
+              <InfoDetails info="protetyka" />
+            </div>
           </div>
         </div>
         {/* <div
@@ -43,5 +62,15 @@ const Dentists = () => {
     </div>
   );
 };
+
+const Arrow = styled(BsArrowDownCircleFill)`
+  transition: 1s all ease-in-out;
+
+  &:hover {
+    transform: scale(1.5);
+    color: gray;
+    cursor: pointer;
+  }
+`;
 
 export default Dentists;
