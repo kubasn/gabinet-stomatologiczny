@@ -68,7 +68,15 @@ const Navbar = () => {
         </div>
         <div className="hidden md:flex pr-4 items-center">
           <button className="bg-zinc-50 text-stone-800 font-semibold  h-12 p-2 rounded-md">
-            Umów wizytę
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Umów wizytę
+            </Link>
           </button>
         </div>
         <div onClick={onClick} className="md:hidden flex items-center">
@@ -134,7 +142,15 @@ const Navbar = () => {
         </div>
         <div className="flex flex-col my-4">
           <button className="border-rose-700 bg-cyan-900 text-zinc-50 py-1 rounded-sm">
-            Umów wizytę
+            <Link
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+            >
+              Umów wizytę
+            </Link>
           </button>
         </div>
       </ul>

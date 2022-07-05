@@ -1,6 +1,62 @@
-import React, { useState } from "react";
-import styled from "styled-components";
+import React, { Component, useState } from "react";
+import styled, { keyframes, css } from "styled-components";
 import { BsArrowDownCircleFill } from "react-icons/bs";
+import CSSTransition from "react-transition-group/CSSTransition";
+
+const InfoDetails = (props) => {
+  const transitionName = `example`;
+  const appearDuration = 5000;
+
+  const Component = styled.div`
+    /* &.fade-enter {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    // enter to
+    &.fade-enter-active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    // exit from
+    &.fade-exit {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    // exit to
+    &.fade-exit-active {
+      visibility: hidden;
+      opacity: 0;
+    } */
+  `;
+
+  const Paragraph = styled.p`
+    /* &:before {
+      content: "";
+      top:0;
+      left:0;
+    } */
+  `;
+
+  return (
+    <>
+      {props.info ? (
+        <CSSTransition in={true} classNames="fade" timeout={3000} unmountOnExit>
+          <Component className="bg-slate-300 top-[210px] w-full left-0 sm:top-[65px] absolute p-3   text-p-2 z-[1] rounded-b-xl">
+            <h2 className="text-2xl text-left  font-semibold ">
+              {details(props.info).h2}
+            </h2>
+            <Paragraph className="text-left pl-2">
+              {details(props.info).p}
+            </Paragraph>
+          </Component>
+        </CSSTransition>
+      ) : null}
+    </>
+  );
+};
 
 const details = (info) => {
   let result = {};
@@ -31,32 +87,6 @@ const details = (info) => {
       break;
   }
   return result;
-};
-
-const InfoDetails = (props) => {
-  const [show, setShow] = useState(false);
-  const Arrow = styled(BsArrowDownCircleFill)`
-    transition: 1s all ease-in-out;
-    ${show ? `transform: rotate(180deg) scale(1.5)` : null};
-
-    &:hover {
-      transform: scale(1.5) rotate(180deg);
-      color: gray;
-      cursor: pointer;
-    }
-  `;
-
-  return (
-    <>
-      <Arrow onClick={() => setShow(!show)}></Arrow>
-      {show ? (
-        <div className="bg-slate-300 absolute top-[60px]">
-          <h2>{details(props.info).h2}</h2>
-          <p>{details(props.info).p}</p>
-        </div>
-      ) : null}
-    </>
-  );
 };
 
 export default InfoDetails;

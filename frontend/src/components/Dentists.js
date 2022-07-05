@@ -5,6 +5,7 @@ import InfoDetails from "./InfoDetails";
 import { useState } from "react";
 
 const Dentists = () => {
+  const [show, setShow] = useState(true);
   return (
     <div
       name="services"
@@ -24,40 +25,51 @@ const Dentists = () => {
             src={require("../assets/3.jpg")}
           ></img>
         </div>
-        <div className="border border-slate-300 rounded-xl text-center md:min-w-[760px] sm:min-w-[480px] min-w-full bg-zinc-100 py-3 px-2 ">
-          <div className="flex justify-between flex-col sm:flex-row ">
+        <div className="border border-slate-300 rounded-xl text-center md:min-w-[760px] sm:min-w-[480px] min-w-full bg-zinc-100 py-3 px-2 relative ">
+          <div className="flex justify-between flex-col sm:flex-row relative ">
             <div className="flex flex-col justify-center items-center relative">
               <p className="flex px-4 pb-2  rounded-lg text-slate-800 font-semibold uppercase">
                 Ortodoncja
               </p>
-              <InfoDetails info="ortodoncja" />
+              <Arrow
+                onClick={() =>
+                  setShow(show == "ortodoncja" ? null : "ortodoncja")
+                }
+              ></Arrow>
             </div>
             <div className="flex flex-col justify-center items-center relative">
               <p className="flex px-4 pb-2  text-slate-800 font-semibold rounded-lg uppercase">
                 Stomatologia
               </p>
-              <InfoDetails info="stomatologia" />
+              <Arrow
+                onClick={() =>
+                  setShow(show == "stomatologia" ? null : "stomatologia")
+                }
+              ></Arrow>
             </div>
             <div className="flex flex-col justify-center items-center relative">
               <p className="flex px-4 pb-2  text-slate-800 font-semibold rounded-lg uppercase">
                 Profilaktyka
               </p>
-              <InfoDetails info="profilaktyka" />
+              <Arrow
+                onClick={() =>
+                  setShow(show == "profilaktyka" ? null : "profilaktyka")
+                }
+              ></Arrow>
             </div>
             <div className="flex flex-col justify-center items-center relative">
               <p className="flex px-4 pb-2  text-slate-800 font-semibold rounded-lg uppercase">
                 Protetyka
               </p>
-              <InfoDetails info="protetyka" />
+              <Arrow
+                onClick={() =>
+                  setShow(show == "protetyka" ? null : "protetyka")
+                }
+              ></Arrow>
             </div>
           </div>
+          <InfoDetails info={show} />
         </div>
-        {/* <div
-          className="absolute flex flex-col py-8 md:min-w-[760px] 
-      buttom-[5%] mx-1 md:left-1/2 transform md:-translate-x-1/2 bg-zinc-200
-      border border-slate-300 rounded-xl text-center shadow-xl
-      "
-        ></div> */}
       </div>
     </div>
   );
@@ -71,6 +83,18 @@ const Arrow = styled(BsArrowDownCircleFill)`
     color: gray;
     cursor: pointer;
   }
+`;
+
+const Paragraph = styled.p`
+  color: red;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  font-size: 2em;
+  transition: all 1s ease-in-out;
+  transform-origin: left;
+  transform: scaleX(1);
 `;
 
 export default Dentists;
